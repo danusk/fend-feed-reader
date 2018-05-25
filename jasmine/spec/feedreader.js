@@ -52,7 +52,7 @@ $(function() {
 
 
     /* TODO: Write a new test suite named "The menu" */
-    describe('The menu', function() {
+    describe('The Menu', function() {
 
         /* TODO: Write a test that ensures the menu element is
          * hidden by default. You'll have to analyze the HTML and
@@ -89,6 +89,22 @@ $(function() {
          */
 
     describe('Initial Entries', function() {
+        let entries;
+
+        beforeEach(function(done) {
+            setTimeout(function() {
+                loadFeed(1);
+                const feed = $('div.feed'),
+                      entry = $('article.entry');
+                entries = feed.find(entry);
+                done();
+            }, 1000)
+        });
+
+        it('have at least one entry', function() {
+            console.log(entries);
+            expect(entries).toBeDefined();
+        });
     });
 
     /* TODO: Write a new test suite named "New Feed Selection" */
@@ -97,4 +113,35 @@ $(function() {
          * by the loadFeed function that the content actually changes.
          * Remember, loadFeed() is asynchronous.
          */
+
+    describe('New Feed Selection', function() {
+        let entriesOne,
+            entriesTwo,
+            equalCheck = false;
+
+        beforeEach(function(done) {
+            setTimeout(function() {
+                loadFeed(1);
+                const feed = $('div.feed'),
+                      entry = $('article.entry');
+                entriesOne = feed.find(entry);
+                done();
+            }, 1000)
+        });
+
+        beforeEach(function(done) {
+            setTimeout(function() {
+                loadFeed(2);
+                const feed = $('div.feed'),
+                      entry = $('article.entry');
+                entriesTwo = feed.find(entry);
+                done();
+            }, 1000)
+        });
+
+        it('have content that changes', function() {
+            expect(equalCheck).toBe(false);
+        });
+    });
+
 }());
