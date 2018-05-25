@@ -88,13 +88,13 @@ $(function() {
          */
 
     describe('Initial Entries', function() {
-        let entries;
+        let     entries;
+        const   feed = $('div.feed'),
+                entry = $('article.entry');
 
         beforeEach(function(done) {
             setTimeout(function() {
                 loadFeed(1);
-                const feed = $('div.feed'),
-                      entry = $('article.entry');
                 entries = feed.find(entry);
                 done();
             }, 1000)
@@ -113,15 +113,17 @@ $(function() {
          */
 
     describe('New Feed Selection', function() {
-        let entriesOne,
-            entriesTwo,
-            equalCheck = false;
+        let     entriesOne,
+                entriesTwo,
+                equalCheck;
+                feed = '';
+                entry = '';
 
         beforeEach(function(done) {
             setTimeout(function() {
-                loadFeed(1);
-                const feed = $('.feed'),
-                      entry = $('article.entry');
+                loadFeed(0);
+                feed = $('.feed');
+                entry = $('article.entry');
                 entriesOne = feed.find(entry);
                 done();
             }, 1000)
@@ -130,9 +132,10 @@ $(function() {
         beforeEach(function(done) {
             setTimeout(function() {
                 loadFeed(2);
-                const feed = $('div.feed'),
-                      entry = $('article.entry');
+                feed = $('.feed');
+                entry = $('article.entry');
                 entriesTwo = feed.find(entry);
+                equalCheck = (entriesOne === entriesTwo);
                 done();
             }, 1000)
         });
@@ -141,5 +144,4 @@ $(function() {
             expect(equalCheck).toBe(false);
         });
     });
-
 }());
