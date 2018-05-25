@@ -51,7 +51,7 @@ $(function() {
     });
 
 
-    /* TODO: Write a new test suite named "The menu" */
+    /* TODO: Write a new test suite named "The Menu" */
     describe('The Menu', function() {
 
         /* TODO: Write a test that ensures the menu element is
@@ -59,12 +59,11 @@ $(function() {
          * the CSS to determine how we're performing the
          * hiding/showing of the menu element.
          */
-        let body = document.querySelector('body');
-        let menuIcon = document.querySelector('.menu-icon-link');
+        const   body = $('body'),
+                menuIcon = $('.menu-icon-link');
 
         it('is hidden by default', function() {
-
-            expect(body.classList.contains('menu-hidden')).toBe(true);
+            expect(body.hasClass('menu-hidden')).toBe(true);
         });
 
         /* TODO: Write a test that ensures the menu changes
@@ -75,7 +74,7 @@ $(function() {
 
         it('changes visibility when menu icon is clicked', function() {
             menuIcon.click();
-            expect(body.classList.contains('menu-hidden')).toBe(false);
+            expect(body.hasClass('menu-hidden')).toBe(false);
         });
     });
 
@@ -102,7 +101,6 @@ $(function() {
         });
 
         it('have at least one entry', function() {
-            console.log(entries);
             expect(entries).toBeDefined();
         });
     });
@@ -122,7 +120,7 @@ $(function() {
         beforeEach(function(done) {
             setTimeout(function() {
                 loadFeed(1);
-                const feed = $('div.feed'),
+                const feed = $('.feed'),
                       entry = $('article.entry');
                 entriesOne = feed.find(entry);
                 done();
