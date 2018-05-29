@@ -22,4 +22,4 @@ The Jasmine test code can be found by navigating to jasmine -> spec -> feedreade
 ## Built With:
 
 * [Jasmine 2.1.2](https://jasmine.github.io/)
-* Google Fonts [Roboto](https://fonts.google.com/specimen/Roboto)
+* Google Fonts: [Roboto](https://fonts.google.com/specimen/Roboto)
