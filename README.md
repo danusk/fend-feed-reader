@@ -9,6 +9,7 @@ These instructions will get you a copy of the project up and running on your loc
 ## Running the Tests:
 
 Visit the live project site here: https://danusk.github.io/fend-feed-reader/
+
 The results of the Jasmine unit tests will be shown at the bottom of the page. 
 
 ## Viewing the Tests:
