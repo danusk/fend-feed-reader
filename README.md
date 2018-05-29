@@ -1,6 +1,9 @@
 # fend-feed-reader
 
-Web-based application that reads RSS feeds
+Built from an existing web-based application that reads RSS feeds. 
+
+## Background: 
+This is a project to get familiar with Jasmine unit tests and "test-driven development." The tests were written to test an existing RSS feed application.  
 
 ## Getting Started:
 
