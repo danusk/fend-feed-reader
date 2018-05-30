@@ -10,8 +10,6 @@ Test suites were written using the Jasmine testing framework to test an existing
 
 Visit the live project site here: https://danusk.github.io/fend-feed-reader/
 
-**Note: To run the tests, the protection lock in the address bar must be disabled.** 
-
 The results will be shown at the bottom of the page. 
 
 ## Viewing the Tests:
