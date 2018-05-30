@@ -1,23 +1,22 @@
 # fend-feed-reader
-
-Built from an existing web-based application that reads RSS feeds. 
+A web-based application that reads RSS feeds. 
 
 ## Background: 
-This is a project to get familiar with Jasmine unit tests and "test-driven development." The tests were written to test an existing RSS feed application.  
+This is a project to become familiar with unit testing and test driven development. 
 
-## Getting Started:
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+Test suites were written using the Jasmine testing framework to test an existing RSS feed reader application.  
 
 ## Running the Tests:
 
 Visit the live project site here: https://danusk.github.io/fend-feed-reader/
 
-The results of the Jasmine unit tests will be shown at the bottom of the page. 
+**Note: To run the tests, the protection lock in the address bar must be disabled.** 
+
+The results will be shown at the bottom of the page. 
 
 ## Viewing the Tests:
 
-The Jasmine test code can be found by navigating to jasmine -> spec -> feedreader.js
+The test code can be found by navigating to **jasmine > spec > feedreader.js**
 
 ## Built With:
 
