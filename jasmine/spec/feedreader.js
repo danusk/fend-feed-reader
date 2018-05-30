@@ -4,13 +4,13 @@
  * all of the tests that will be run against the application.
  */
 
-/* All the tests within the $() function,
+/* All the tests are within the $() function,
  * since some of these tests may require DOM elements. We want
  * to ensure they don't run until the DOM is ready.
  */
 $(function() {
-    /* Test suite about the RSS feeds definitions
-    *  and the allFeeds variable in our application.
+    /* Test suite for the RSS feeds definitions
+    *  and the allFeeds variable in the application
     */
     describe('RSS Feeds', function() {
         /* Tests to make sure that the allFeeds variable has been
@@ -20,7 +20,6 @@ $(function() {
             expect(allFeeds).toBeDefined();
             expect(allFeeds.length).not.toBe(0);
         });
-
 
         /* Test that loops through each feed
          * in the allFeeds object and ensures it has a URL defined
@@ -45,11 +44,10 @@ $(function() {
          });
     });
 
-
     /* Test suite for the menu */
     describe('The Menu', function() {
 
-        // Test that ensures the menu element is hidden by default.
+        /* Test that ensures the menu element is hidden by default. */
         const   body = $('body'),
                 menuIcon = $('.menu-icon-link');
 
@@ -64,24 +62,25 @@ $(function() {
         */
 
         it('changes visibility when menu icon is clicked', function() {
-            // when menu icon clicked for the first time, menu should show
+            // When menu icon clicked for the first time, menu should show
             menuIcon.click();
             expect(body.hasClass('menu-hidden')).toBe(false);
-            // the second click should hide the menu
+            // The second click should hide the menu
             menuIcon.click();
             expect(body.hasClass('menu-hidden')).toBe(true);
         });
     });
 
-        /* Test that ensures when the loadFeed
-         * function is called and completes its work, there is at least
-         * a single .entry element within the .feed container.
-         */
-
+    /* Test suite for the initial entries */
     describe('Initial Entries', function() {
         let     entries;
         const   feed = $('div.feed'),
                 entry = $('article.entry');
+
+        /* Test that ensures when the loadFeed
+         * function is called and completes its work, there is at least
+         * a single .entry element within the .feed container.
+         */
 
         beforeEach(function(done) {
             loadFeed(1);
@@ -95,14 +94,13 @@ $(function() {
     });
 
     /* Test suite for "New Feed Selection" */
+    describe('New Feed Selection', function() {
+        let feedOne;
+        let feedTwo;
 
         /* Test that ensures when a new feed is loaded
          * by the loadFeed function that the content actually changes.
          */
-
-    describe('New Feed Selection', function() {
-        let feedOne;
-        let feedTwo;
 
         beforeEach(function(done) {
             loadFeed(0, function() {
