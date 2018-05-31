@@ -28,7 +28,7 @@ $(function() {
          it('have URLs', function() {
             allFeeds.forEach(feed => {
                 expect(feed.url).toBeDefined();
-                expect(feed.url).toBeTruthy();
+                expect(feed.url).not.toBe('');
             });
          });
 
@@ -39,7 +39,7 @@ $(function() {
         it('have names', function() {
             allFeeds.forEach(feed => {
                 expect(feed.name).toBeDefined();
-                expect(feed.name).toBeTruthy();
+                expect(feed.name).not.toBe('');
             });
          });
     });
@@ -113,7 +113,7 @@ $(function() {
         });
 
         it('has content that changes', function() {
-            expect(feedOne === feedTwo).toBe(false);
+            expect(feedOne).not.toBe(feedTwo);
         });
     });
 }());
